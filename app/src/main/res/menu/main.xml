@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    xmlns:tools="schemas.android.com/tools"
+    tools:context="ru.hustlecity.android.MainActivity"
+    xmlns:ru.hustlecity.android="http://schemas.android.com/apk/res-auto"
+    >
+    <item android:id="@+id/search"
+        android:title="find"
+        android:icon="@drawable/ic_menu_camera"
+        ru.hustlecity.android:showAsAction="collapseActionView|ifRoom"
+        android:actionViewClass="android.widget.SearchView" />
 </menu>

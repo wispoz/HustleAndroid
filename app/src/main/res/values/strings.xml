@@ -8,5 +8,6 @@
 <string name="action_disco">Дискотеки</string>
 <string name="action_judges">Судьи</string>
 <string name="app_title">HustleCity - Город танца</string>
+<string name="search_hint">поиск</string>
 
 </resources>
