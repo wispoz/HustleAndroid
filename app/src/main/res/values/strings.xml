@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">Android</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-    <string name="action_calculator">Калькулятор мест</string>
+<string name="app_name">Hustlecity</string>
+<string name="navigation_drawer_open">Open navigation drawer</string>
+<string name="navigation_drawer_close">Close navigation drawer</string>
+<string name="action_calculator">Калькулятор мест</string>
+<string name="action_dancers">База танцоров</string>
+<string name="action_competitions">Соревнования</string>
+<string name="action_disco">Дискотеки</string>
+<string name="action_judges">Судьи</string>
+<string name="app_title">HustleCity - Город танца</string>
 
 </resources>

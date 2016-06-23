@@ -18,10 +18,15 @@ public class CalculatorHandler implements SeekBar.OnSeekBarChangeListener {
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         if(isFrom) {
+            int position = seekBar.getProgress()  / 2;
+            this.place.setDndPosition(Integer.toString(position));
             this.place.setFrom(Integer.toString(seekBar.getProgress()));
         } else {
+            int position = seekBar.getProgress()  / 2;
+            this.place.setClassicPosition(Integer.toString(position));
             this.place.setPlace(Integer.toString(seekBar.getProgress()));
         }
+
     }
 
     @Override

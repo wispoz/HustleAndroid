@@ -60,12 +60,6 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -76,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment;
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_dancers) {
             // Handle the camera action
         } else if (id == R.id.nav_calculator) {
             fragment = new CalculatorView();
@@ -84,13 +78,9 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.mainFrame, fragment);
             ft.commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_competitions) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_disco) {
 
         }
 
