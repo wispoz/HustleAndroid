@@ -56,12 +56,12 @@ public class MainActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
+      //  SearchManager searchManager =
+      ///          (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+      //  SearchView searchView =
+      //          (SearchView) menu.findItem(R.id.search).getActionView();
+     //   searchView.setSearchableInfo(
+     //           searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 

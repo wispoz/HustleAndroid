@@ -6,7 +6,7 @@
     >
     <item android:id="@+id/search"
         android:title="find"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@android:drawable/ic_menu_search"
         ru.hustlecity.android:showAsAction="collapseActionView|ifRoom"
         android:actionViewClass="android.widget.SearchView" />
 </menu>
