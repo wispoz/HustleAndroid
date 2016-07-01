@@ -13,14 +13,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import ru.hustlecity.android.data.PointsData;
+import ru.hustlecity.android.models.CalculatorRecord;
 import ru.hustlecity.android.views.CalculatorView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        realm = Realm.getDefaultInstance();
+        try {
+            loadJsonFromStream();
+        }catch (IOException e) {
+
+
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -83,5 +103,25 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void loadJsonFromStream() throws IOException {
+        // Use streams if you are worried about the size of the JSON whether it was persisted on disk
+        // or received from the network.
+        InputStream stream = getAssets().open("points.json");
+
+        // Open a transaction to store items into the realm
+        realm.beginTransaction();
+        try {
+            realm.createAllFromJson(CalculatorRecord.class, stream);
+            realm.commitTransaction();
+        } catch (IOException e) {
+            // Remember to cancel the transaction if anything goes wrong.
+            realm.cancelTransaction();
+        } finally {
+            if (stream != null) {
+                stream.close();
+            }
+        }
     }
 }
